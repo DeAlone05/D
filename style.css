@@ -28,7 +28,7 @@ body, html {
 
 .socials a {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   transition: transform 0.2s, color 0.2s;
   text-decoration: none;
 }
@@ -116,12 +116,12 @@ body, html {
 }
 
 .status {
-  font-size: 18px;
+  font-size: 24px;
   color: #ccc;
 }
 
 .socials i {
-  font-size: 24px;
+  font-size: 29px;
   margin: 0 10px;
   cursor: pointer;
   transition: 0.2s;
