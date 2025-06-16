@@ -83,7 +83,7 @@ function enterSite() {
   document.getElementById('profile').style.display = 'flex';
 
   const audio = document.getElementById('myAudio');
-  audio.volume = 0.1;
+  audio.volume = 0.4;
   audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
 
 
