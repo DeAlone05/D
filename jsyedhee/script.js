@@ -76,6 +76,8 @@ function fetchProfile() {
       document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
       document.getElementById('status').textContent = '';
     });
+    fetchProfile(); 
+    setInterval(fetchProfile, 1000); 
 }
 
 const playlist = [
@@ -112,8 +114,3 @@ function playNext() {
   currentIndex = (currentIndex + 1) % playlist.length;
   playCurrent();
 }
-
-
-  fetchProfile(); 
-  setInterval(fetchProfile, 1000); 
-
