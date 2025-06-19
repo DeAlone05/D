@@ -2,17 +2,21 @@ const userId = '603384047321743370'; // Discord User ID
 
 function fetchProfile() {
   fetch(`https://api.lanyard.rest/v1/users/${userId}`)
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      return res.json();
-    })
-    .then(data => {
-      if (!data.success) throw new Error("API ไม่ตอบสนอง");
-
-      const d = data.data;
-      const username = `${d.discord_user.username}${d.discord_user.discriminator}`;
-      let status = d.discord_status;
-
+  .then(res => {
+    console.log("Raw response:", res);
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return res.json();
+  })
+  .then(data => {
+    console.log("Parsed data:", data);
+    if (!data.success) throw new Error("API ไม่ตอบสนอง");
+    // ... (โค้ดเดิม)
+  })
+  .catch(err => {
+    console.error("Error in fetchProfile:", err);
+    document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
+    document.getElementById('status').textContent = '';
+  });
       
       const isActive =
         d.active_on_discord_desktop ||
