@@ -77,41 +77,32 @@ function fetchProfile() {
       document.getElementById('status').textContent = '';
     });
 }
-    const playlist = [
-          "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
-          "https://raw.githubusercontent.com/Dogearth/mp3/main/Ego.mp3"
-        ];
-        
-        let currentIndex = 0;
-        let audio;
-        
-        function enterSite() {
-          document.querySelector('.enter-btn').style.display = 'none';
-          document.getElementById('profile').style.display = 'flex';
-        
-          audio = document.getElementById('myAudio');
-          audio.volume = 0.1;
-          audio.loop = false; 
-          playCurrent();
-          audio.addEventListener('ended', playNext);
-        
-          document.addEventListener('keydown', (event) => {
-            if (event.code === 'Space') {
-              event.preventDefault();
-              audio.paused ? audio.play() : audio.pause();
-            }
-          });
-        }
-        
-        function playCurrent() {
-          audio.src = playlist[currentIndex];
-          audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
-        }
-        
-        function playNext() {
-          currentIndex = (currentIndex + 1) % playlist.length;
-          playCurrent();
-        }
-          fetchProfile(); 
-          setInterval(fetchProfile, 1000); 
+
+function enterSite() {
+  document.querySelector('.enter-btn').style.display = 'none';
+  document.getElementById('profile').style.display = 'flex';
+
+  const hee = [ "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3" ];
+  const hum = hee[Math.floor(Math.random() * hee.length)];
+
+  const audio = document.getElementById('myAudio');
+  audio.src = hum;
+  audio.volume = 0.1;
+  audio.loop = true; // เพิ่ม loop ถ้าต้องการให้เล่นซ้ำ
+  audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
+
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      event.preventDefault();
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
       }
+    }
+  });
+}
+
+  fetchProfile(); 
+  setInterval(fetchProfile, 1000); 
+}
