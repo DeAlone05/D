@@ -1,7 +1,7 @@
 const userId = '603384047321743370'; // Discord User ID
 
 function fetchProfile() {
-  fetch(https://api.lanyard.rest/v1/users/${userId})
+  fetch(https://api.lanyard.rest/v1/users/${userId});
     .then(res => {
       if (!res.ok) throw new Error(HTTP error! status: ${res.status});
       return res.json();
