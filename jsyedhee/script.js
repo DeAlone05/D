@@ -76,12 +76,11 @@ function fetchProfile() {
       document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
       document.getElementById('status').textContent = '';
     });
-    fetchProfile(); 
-    setInterval(fetchProfile, 1000); 
 }
 
 const playlist = [
-  "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3"
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/Ego.mp3"
 ];
 
 let currentIndex = 0;
@@ -114,3 +113,5 @@ function playNext() {
   currentIndex = (currentIndex + 1) % playlist.length;
   playCurrent();
 }
+fetchProfile(); 
+setInterval(fetchProfile, 1000); 
