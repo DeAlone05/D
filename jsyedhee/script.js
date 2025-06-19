@@ -76,7 +76,7 @@ function fetchProfile() {
       document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
       document.getElementById('status').textContent = '';
     });
-}
+})
 
 const playlist = [
   "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
