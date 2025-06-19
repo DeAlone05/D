@@ -83,7 +83,7 @@ function enterSite() {
   document.getElementById('profile').style.display = 'flex';
 
 //----------------------------//
-const hee = [ ];
+const hee = [ https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3 ];
 const hum = hee[Math.floor(Math.random() * hee.length)];
   const audio = document.getElementById('myAudio');
   audio.src = hum;
