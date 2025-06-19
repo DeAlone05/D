@@ -1,16 +1,16 @@
 const userId = '603384047321743370'; // Discord User ID
 
 function fetchProfile() {
-  fetch(https://api.lanyard.rest/v1/users/${userId});
+  fetch(`https://api.lanyard.rest/v1/users/${userId}`)
     .then(res => {
-      if (!res.ok) throw new Error(HTTP error! status: ${res.status});
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return res.json();
     })
     .then(data => {
       if (!data.success) throw new Error("API ไม่ตอบสนอง");
 
       const d = data.data;
-      const username = ${d.discord_user.username}${d.discord_user.discriminator};
+      const username = `${d.discord_user.username}${d.discord_user.discriminator}`;
       let status = d.discord_status;
 
       
@@ -27,10 +27,10 @@ function fetchProfile() {
       if (d.discord_user.avatar) {
         const isAnimated = d.discord_user.avatar.startsWith('a_');
         const ext = isAnimated ? 'gif' : 'png';
-        avatarUrl = https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.${ext}?size=512;
+        avatarUrl = `https://cdn.discordapp.com/avatars/${d.discord_user.id}/${d.discord_user.avatar}.${ext}?size=512`;
       } else {
         const index = parseInt(d.discord_user.discriminator) % 5;
-        avatarUrl = https://cdn.discordapp.com/embed/avatars/${index}.png;
+        avatarUrl = `https://cdn.discordapp.com/embed/avatars/${index}.png`;
       }
 
       const statusEmojiMap = {
@@ -47,12 +47,12 @@ function fetchProfile() {
         offline: "ออฟไลน์"
       };
 
-      const fullStatus = ${statusEmojiMap[status] || "❔"} ${statusTextMap[status] || "ไม่ทราบสถานะ"};
+      const fullStatus = `${statusEmojiMap[status] || "❔"} ${statusTextMap[status] || "ไม่ทราบสถานะ"}`;
 
       // แสดงผล
       document.getElementById('username').textContent = username;
       document.getElementById('status').textContent = fullStatus;
-      document.getElementById('avatar').style.backgroundImage = url('${avatarUrl}');
+      document.getElementById('avatar').style.backgroundImage = `url('${avatarUrl}')`;
 
       // สีวงกลมสถานะ
       const statusIndicator = document.getElementById('status-indicator');
@@ -76,7 +76,8 @@ function fetchProfile() {
       document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
       document.getElementById('status').textContent = '';
     });
-          const playlist = [
+}
+    const playlist = [
           "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
           "https://raw.githubusercontent.com/Dogearth/mp3/main/Ego.mp3"
         ];
