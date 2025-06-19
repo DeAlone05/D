@@ -13,7 +13,6 @@ function fetchProfile() {
       const username = `${d.discord_user.username}${d.discord_user.discriminator}`;
       let status = d.discord_status;
 
-      
       const isActive =
         d.active_on_discord_desktop ||
         d.active_on_discord_web ||
@@ -81,14 +80,9 @@ function fetchProfile() {
 function enterSite() {
   document.querySelector('.enter-btn').style.display = 'none';
   document.getElementById('profile').style.display = 'flex';
-
-  const hee = [ "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3" ];
-  const hum = hee[Math.floor(Math.random() * hee.length)];
-
   const audio = document.getElementById('myAudio');
-  audio.src = hum;
   audio.volume = 0.1;
-  audio.loop = true; // เพิ่ม loop ถ้าต้องการให้เล่นซ้ำ
+  audio.loop = true;
   audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
 
   document.addEventListener('keydown', (event) => {
@@ -102,7 +96,5 @@ function enterSite() {
     }
   });
 }
-
-  fetchProfile(); 
-  setInterval(fetchProfile, 1000); 
-}
+fetchProfile();
+setInterval(fetchProfile, 1000);
