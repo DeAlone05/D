@@ -80,7 +80,7 @@ function fetchProfile() {
 
 const playlist = [
   "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
-  "https://raw.githubusercontent.com/Dogearth/mp3/main/another.mp3"
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3"
 ];
 
 let currentIndex = 0;
