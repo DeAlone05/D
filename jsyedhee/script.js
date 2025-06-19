@@ -116,4 +116,4 @@ function playNext() {
 
   fetchProfile(); 
   setInterval(fetchProfile, 1000); 
-}
+
