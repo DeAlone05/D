@@ -78,26 +78,42 @@ function fetchProfile() {
     });
 }
 
+const playlist = [
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/another.mp3"
+];
+
+let currentIndex = 0;
+let audio;
+
 function enterSite() {
   document.querySelector('.enter-btn').style.display = 'none';
   document.getElementById('profile').style.display = 'flex';
 
-//----------------------------//
-  const audio = document.getElementById('myAudio');
-  audio.volume = 0.4;
-  audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
-
+  audio = document.getElementById('myAudio');
+  audio.volume = 0.1;
+  audio.loop = false; 
+  playCurrent();
+  audio.addEventListener('ended', playNext);
 
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       event.preventDefault();
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+      audio.paused ? audio.play() : audio.pause();
     }
   });
+}
+
+function playCurrent() {
+  audio.src = playlist[currentIndex];
+  audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
+}
+
+function playNext() {
+  currentIndex = (currentIndex + 1) % playlist.length;
+  playCurrent();
+}
+
 
   fetchProfile(); 
   setInterval(fetchProfile, 1000); 
