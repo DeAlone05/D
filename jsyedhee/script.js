@@ -74,7 +74,7 @@ function fetchProfile() {
         default:
           statusIndicator.classList.add('status-offline');
       }
-    })
+    }
     .catch(err => {
       console.error(err);
       document.getElementById('username').textContent = 'ไม่สามารถโหลดโปรไฟล์';
