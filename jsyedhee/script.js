@@ -82,11 +82,8 @@ function enterSite() {
   document.querySelector('.enter-btn').style.display = 'none';
   document.getElementById('profile').style.display = 'flex';
 
-//----------------------------//
-const hee = [ "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3", ];
-const hum = hee[Math.floor(Math.random() * hee.length)];
+//----------------------------//
   const audio = document.getElementById('myAudio');
-  audio.src = hum;
   audio.volume = 0.4;
   audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
 
