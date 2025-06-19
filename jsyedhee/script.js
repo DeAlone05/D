@@ -1,4 +1,4 @@
-const userId = '603384047321743370'; // Discord User ID
+const userId = '603384047321743370'; // Discord User ID 
 
 function fetchProfile() {
   fetch(`https://api.lanyard.rest/v1/users/${userId}`)
@@ -78,41 +78,42 @@ function fetchProfile() {
 }
 
 const playlist = [
-    "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
-    "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3"
-  ];
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3"
+];
 
-  let currentIndex = 0;
-  let audio;
+let currentIndex = 0;
+let audio;
 
 function enterSite() {
-    document.querySelector('.enter-btn').style.display = 'none';
-    document.getElementById('profile').style.display = 'flex';
+  document.querySelector('.enter-btn').style.display = 'none';
+  document.getElementById('profile').style.display = 'flex';
 
-    audio = document.getElementById('myAudio');
-    audio.volume = 0.1;
-    audio.loop = false;
-    playCurrent();
+  audio = document.getElementById('myAudio');
+  audio.volume = 0.1;
+  audio.loop = false;
+  playCurrent();
 
-    audio.addEventListener('ended', playNext);
+  audio.addEventListener('ended', playNext);
 
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        audio.paused ? audio.play() : audio.pause();
-      }
-    });
-  }
-
-  function playCurrent() {
-    audio.src = playlist[currentIndex];
-    audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
-  }
-
-  function playNext() {
-    currentIndex = (currentIndex + 1) % playlist.length;
-    playCurrent();
-  }
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      event.preventDefault();
+      audio.paused ? audio.play() : audio.pause();
+    }
+  });
 }
+
+function playCurrent() {
+  audio.src = playlist[currentIndex];
+  audio.play().catch(err => console.warn('เล่นเพลงไม่ได้:', err));
+}
+
+function playNext() {
+  currentIndex = (currentIndex + 1) % playlist.length;
+  playCurrent();
+}
+
+// 🔽 เรียกใช้ฟังก์ชัน
 fetchProfile();
 setInterval(fetchProfile, 1000);
