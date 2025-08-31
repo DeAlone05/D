@@ -78,9 +78,11 @@ function fetchProfile() {
 }
 
 const playlist = [
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/Jigsaw Story.mp3",
   "https://raw.githubusercontent.com/Dogearth/mp3/main/hee.mp3",
   "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3",
-  "https://raw.githubusercontent.com/Dogearth/mp3/main/Ego.mp3"
+  "https://raw.githubusercontent.com/Dogearth/mp3/main/LIKE DAMN.mp3"
+  
 ];
 
 let currentIndex = 0;
@@ -118,4 +120,5 @@ function playNext() {
 // 🔽 เรียกใช้ฟังก์ชัน
 fetchProfile();
 setInterval(fetchProfile, 1000);
+
 
