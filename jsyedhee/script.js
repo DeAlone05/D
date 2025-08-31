@@ -93,7 +93,7 @@ function enterSite() {
   document.getElementById('profile').style.display = 'flex';
 
   audio = document.getElementById('myAudio');
-  audio.volume = 0.1;
+  audio.volume = 0.3;
   audio.loop = false;
   playCurrent();
 
@@ -120,6 +120,7 @@ function playNext() {
 // 🔽 เรียกใช้ฟังก์ชัน
 fetchProfile();
 setInterval(fetchProfile, 1000);
+
 
 
 
