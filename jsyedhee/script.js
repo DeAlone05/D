@@ -93,7 +93,7 @@ function enterSite() {
   document.getElementById('profile').style.display = 'flex';
 
   audio = document.getElementById('myAudio');
-  audio.volume = 0.3;
+  audio.volume = 0.2;
   audio.loop = false;
   playCurrent();
 
@@ -141,6 +141,7 @@ setInterval(fetchProfile, 1000);
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
   });
+
 
 
 
