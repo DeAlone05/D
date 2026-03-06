@@ -3,14 +3,16 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Sriracha', cursive;
   box-sizing: border-box;
+  font-family: 'Sriracha', cursive;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
-  font-family: sans-serif;
+  overflow: hidden;
+  background: #000;
 }
 
 #bg-gif {
@@ -20,117 +22,321 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
+  filter: brightness(0.4);
 }
-.socials {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.socials a {
-  color: white;
-  font-size: 20px;
-  transition: transform 0.2s, color 0.2s;
-  text-decoration: none;
-}
-
-.socials a:hover {
-  transform: scale(1.2);
-  color: #1da1f2; /* หรือสีอื่นที่ชอบ */
-}
-
 
 .overlay {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1;
 }
 
 .enter-btn {
   font-size: 50px;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 10;
+  text-transform: uppercase;
 }
 
 .enter-btn:hover {
-  color: #f39c12;
+  text-shadow: 0 0 20px #fff;
+  transform: scale(1.1);
 }
 
 .profile {
   display: none;
+  background: rgba(15, 15, 15, 0.85);
+  padding: 30px;
+  border-radius: 25px;
+  width: 520px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .avatar {
-  position: relative;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 4px solid white;
+  position: relative;
   background-size: cover;
-  background-position: center;
+  margin-bottom: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Avatar controls (upload, link, reset) */
+.avatar-controls {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.avatar-edit,
+.avatar-link,
+.avatar-reset {
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.avatar-edit:hover,
+.avatar-link:hover,
+.avatar-reset:hover { transform: translateY(-2px); }
+
+.avatar-controls { display: none; }
+.avatar:hover .avatar-controls { display: flex; }
 
 .status-indicator {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  bottom: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 3.5px solid white;
-  background-color: gray; 
-  bottom: -10px;  
-  right: -10px;   
-  box-sizing: content-box;
+  border: 3px solid #0f0f0f;
 }
 
+/* Utility class to hide the status dot when using a manual avatar */
+.hide-status-indicator {
+  display: none !important;
+}
 
+.username {
+  font-size: 46px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
 
+.status-bio {
+  font-style: italic;
+  color: #ccc;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.location {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+/* Sub Profile pikminmi */
+.sub-profile {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sub-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #333;
+  background-size: cover;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.sub-name {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sub-name a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.last-seen {
+  font-size: 11px;
+  color: #777;
+}
+
+/* Socials Icons */
+.socials-row {
+  display: flex;
+  gap: 16px;
+  font-size: 28px;
+  margin-top: 14px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials-row i,
+.socials-row .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0 8px;
+  color: #fff;
+  transition: transform 0.12s, text-shadow 0.12s;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.socials-row i:hover,
+.socials-row .social-link:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(255,255,255,0.14);
+}
+
+/* Spotify accent (kept subtle) */
+.socials-row .spotify i { color: #a259ff; }
+
+.side-icon {
+  opacity: 0.5;
+  font-size: 18px;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+/* Music Player */
+.music-card {
+  display: none;
+  margin-top: 15px;
+  background: rgba(20, 20, 20, 0.95);
+  width: 520px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.music-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #222;
+  background-size: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.music-info {
+  flex-grow: 1;
+  color: white;
+  overflow: hidden;
+}
+
+.song-name {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.progress-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #666;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.music-controls {
+  display: flex;
+  gap: 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Status Colors */
 .status-online {
-  background-color: #43b581;
+  background: #43b581;
 }
 
 .status-idle {
-  background-color: #faa61a;
+  background: #faa61a;
 }
 
-.status-dnd {
-  background-color: #f04747;
+/* ส่วนควบคุมเสียงมุมซ้ายบน */
+.volume-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  background: rgba(15, 15, 15, 0.6);
+  padding: 10px 15px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s;
+  opacity: 0.5;
 }
 
-.status-offline {
-  background-color: #747f8d;
+.volume-container:hover {
+  opacity: 1;
 }
 
-
-.username {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.status {
-  font-size: 24px;
-  color: #ccc;
-}
-
-.socials i {
-  font-size: 29px;
-  margin: 0 10px;
+.volume-container i {
+  color: white;
   cursor: pointer;
-  transition: 0.2s;
+  font-size: 14px;
 }
 
-.socials i:hover {
-  color: #f39c12;
+#volume-slider {
+  width: 80px;
+  cursor: pointer;
+  accent-color: #fff;
 }
-
