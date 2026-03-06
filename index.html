@@ -3,41 +3,63 @@
 <head>  
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title>Discord Profile </title>  
+  <title>Discord Profile</title>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  
   <link rel="stylesheet" href="style.css" />  
 </head>  
 <body>  
-    <img src="https://raw.githubusercontent.com/Dogearth/mp3/main/hee.gif" id="bg-gif" />  
+  <img src="https://raw.githubusercontent.com/Dogearth/mp3/main/hee.gif" id="bg-gif" />  
   
   <div class="overlay">  
-    <div class="enter-btn" onclick="enterSite()"> Enter </div>  
+    <div class="enter-btn" id="enterBtn" onclick="enterSite()"> Enter </div>  
+
     <div class="profile" id="profile">  
       <div class="avatar" id="avatar">  
         <div class="status-indicator" id="status-indicator"></div>  
       </div>  
       <div class="username" id="username">Loading...</div>  
-      <div class="status" id="status">Checking status...</div>  
-      <div class="socials">  
-    <a href="https://steamcommunity.com/profiles/76561198439497625/" target="_blank">  
-    <i class="fab fa-steam"></i>  
-    </a>  
-    <a href="https://www.facebook.com/titiwut.phothieng/?locale=th_TH" target="_blank">  
-    <i class="fab fa-facebook"></i>  
-    </a>   
-    <a href="https://discordapp.com/users/603384047321743370" target="_blank">  
-    <i class="fab fa-discord"></i>  
-    </a>  
-    <a href="https://www.instagram.com/__.05earth/" target="_blank">  
-    <i class="fab fa-instagram"></i>  
-    </a>  
-    <a href="./html/yedhee.html" target="_blank">  
-    <i class="fab fa-vk"></i>
-    </a>  
-  </div>  
-  <audio id="myAudio" preload="auto">
-    <source src="https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3" type="audio/mpeg">
-  </audio>  
-  <script src="jsyedhee/script.js" defer></script>   
+      <div class="status-bio">ชอบเย็ดheeมั้ย</div>
+      <div class="location"><i class="fas fa-map-marker-alt"></i> hee .</div>
+
+      <div class="sub-profile">
+        <div class="sub-avatar" id="sub-avatar"></div>
+        <div class="sub-info">
+          <span class="sub-name"><a id="sub-name-link" href="#" target="_blank"></a> <i class="fab fa-discord" id="sub-discord-icon"></i></span>
+          <span class="last-seen" id="sub-status-text">checking...</span>
+        </div>
+      </div>
+
+      <div class="socials-row">  
+        <a href="https://steamcommunity.com/profiles/76561198439497625/" target="_blank" class="social-link"><i class="fab fa-steam"></i></a>
+        <a href="https://www.facebook.com/titiwut.phothieng/?locale=th_TH" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://discord.com/users/603384047321743370" class="social-link"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com/__.05earth/" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="./html/yedhee.html" class="social-link"><i class="fab fa-vk"></i></a>
+      </div>  
+    </div>
+
+    <div class="music-card" id="music-card">
+      <div class="music-thumb" id="music-thumb"></div>
+      <div class="music-info">
+        <div class="song-name" id="song-name">Loading...</div>
+        <div class="progress-area">
+          <span id="current-time">0:00</span>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      <div class="music-controls">
+        <i class="fas fa-step-backward" onclick="playPrevious()"></i>
+        <i class="fas fa-play" id="play-pause-icon" onclick="togglePlay()"></i>
+        <i class="fas fa-step-forward" onclick="playNext()"></i>
+      </div>
+    </div>
+  </div>
+  <div class="volume-container" id="volume-control" style="display: none;">
+    <i class="fas fa-volume-down" onclick="changeVolume(-0.1)"></i>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+    <i class="fas fa-volume-up" onclick="changeVolume(0.1)"></i>
+  </div>
+  <script src="jsyedhee/script.js"></script>   
 </body>  
 </html>
