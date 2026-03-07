@@ -448,3 +448,24 @@ window.changeVolume = function(amount) {
   audio.volume = newVol;
   document.getElementById('volume-slider').value = newVol;
 };
+
+const card = document.querySelector(".profile");
+
+document.addEventListener("mousemove", (e) => {
+  const rect = card.getBoundingClientRect();
+  
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  card.style.setProperty("--x", x + "px");
+  card.style.setProperty("--y", y + "px");
+
+  const rotateX = (y - rect.height / 2) / 20;
+  const rotateY = (rect.width / 2 - x) / 20;
+
+  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+document.addEventListener("mouseleave", () => {
+  card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+});
