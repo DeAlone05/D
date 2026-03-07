@@ -33,6 +33,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   z-index: 1;
@@ -52,31 +53,48 @@ html {
   transform: scale(1.1);
 }
 
+/* PROFILE CARD */
+
 .profile {
   display: none;
-  background: rgba(15, 15, 15, 0.85);
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 30px 25px;
   border-radius: 25px;
-  width: 520px;
+  width: 360px;
   text-align: center;
   color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   flex-direction: column;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.profile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* AVATAR */
+
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   position: relative;
   background-size: cover;
   margin-bottom: 15px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.25s ease;
 }
 
-/* Avatar controls (upload, link, reset) */
+.avatar:hover {
+  transform: scale(1.07);
+}
+
+/* Avatar controls */
+
 .avatar-controls {
   position: absolute;
   right: 6px;
@@ -105,7 +123,9 @@ html {
 
 .avatar-edit:hover,
 .avatar-link:hover,
-.avatar-reset:hover { transform: translateY(-2px); }
+.avatar-reset:hover {
+  transform: translateY(-2px);
+}
 
 .avatar-controls { display: none; }
 .avatar:hover .avatar-controls { display: flex; }
@@ -120,13 +140,14 @@ html {
   border: 3px solid #0f0f0f;
 }
 
-/* Utility class to hide the status dot when using a manual avatar */
 .hide-status-indicator {
   display: none !important;
 }
 
+/* TEXT */
+
 .username {
-  font-size: 46px;
+  font-size: 42px;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
@@ -140,13 +161,14 @@ html {
 
 .location {
   font-size: 14px;
-  color: #888;
+  color: #aaa;
   margin-bottom: 15px;
 }
 
-/* Sub Profile pikminmi */
+/* SUB PROFILE */
+
 .sub-profile {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   width: 100%;
   padding: 12px 18px;
   border-radius: 18px;
@@ -155,11 +177,16 @@ html {
   gap: 15px;
   margin: 15px 0;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.sub-profile:hover {
+  transform: scale(1.02);
 }
 
 .sub-avatar {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: #333;
   background-size: cover;
@@ -173,7 +200,7 @@ html {
 
 .sub-name {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -190,11 +217,12 @@ html {
   color: #777;
 }
 
-/* Socials Icons */
+/* SOCIAL ICONS */
+
 .socials-row {
   display: flex;
-  gap: 16px;
-  font-size: 28px;
+  gap: 18px;
+  font-size: 26px;
   margin-top: 14px;
   color: white;
   align-items: center;
@@ -206,22 +234,22 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  padding: 0 8px;
   color: #fff;
-  transition: transform 0.12s, text-shadow 0.12s;
-  font-size: 28px;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
   text-decoration: none;
 }
 
 .socials-row i:hover,
 .socials-row .social-link:hover {
-  transform: translateY(-3px);
-  text-shadow: 0 0 10px rgba(255,255,255,0.14);
+  transform: translateY(-4px) scale(1.1);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-/* Spotify accent (kept subtle) */
-.socials-row .spotify i { color: #a259ff; }
+/* Spotify accent */
+
+.socials-row .spotify i {
+  color: #a259ff;
+}
 
 .side-icon {
   opacity: 0.5;
@@ -232,22 +260,29 @@ html {
   transform: scaleX(-1);
 }
 
-/* Music Player */
+/* MUSIC CARD */
+
 .music-card {
   display: none;
-  margin-top: 15px;
-  background: rgba(20, 20, 20, 0.95);
-  width: 520px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  width: 360px;
   padding: 15px 20px;
   border-radius: 20px;
   align-items: center;
   gap: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-4px);
 }
 
 .music-thumb {
-  width: 72px;
-  height: 72px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: #222;
   background-size: cover;
@@ -272,7 +307,7 @@ html {
   align-items: center;
   gap: 10px;
   font-size: 11px;
-  color: #666;
+  color: #aaa;
 }
 
 .progress-bar {
@@ -298,7 +333,8 @@ html {
   font-size: 16px;
 }
 
-/* Status Colors */
+/* STATUS COLORS */
+
 .status-online {
   background: #43b581;
 }
@@ -307,7 +343,8 @@ html {
   background: #faa61a;
 }
 
-/* ส่วนควบคุมเสียงมุมซ้ายบน */
+/* VOLUME */
+
 .volume-container {
   position: fixed;
   top: 20px;
@@ -339,4 +376,104 @@ html {
   width: 80px;
   cursor: pointer;
   accent-color: #fff;
+}
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media screen and (max-width: 600px) {
+
+  body, html{
+    overflow:auto;
+  }
+
+  .overlay{
+    padding:20px;
+    gap:15px;
+  }
+
+  .enter-btn{
+    font-size:38px;
+  }
+
+  /* PROFILE CARD */
+  .profile{
+    width:95%;
+    max-width:320px;
+    padding:22px 18px;
+  }
+
+  .username{
+    font-size:32px;
+  }
+
+  .status-bio{
+    font-size:16px;
+  }
+
+  .location{
+    font-size:13px;
+  }
+
+  /* AVATAR */
+  .avatar{
+    width:110px;
+    height:110px;
+  }
+
+  /* SUB PROFILE */
+  .sub-profile{
+    padding:10px 12px;
+    gap:10px;
+  }
+
+  .sub-avatar{
+    width:48px;
+    height:48px;
+  }
+
+  .sub-name{
+    font-size:15px;
+  }
+
+  /* SOCIAL ICONS */
+  .socials-row{
+    font-size:22px;
+    gap:14px;
+  }
+
+  /* MUSIC CARD */
+  .music-card{
+    width:95%;
+    max-width:320px;
+    padding:12px 14px;
+  }
+
+  .music-thumb{
+    width:55px;
+    height:55px;
+  }
+
+  .song-name{
+    font-size:14px;
+  }
+
+  .progress-area{
+    font-size:10px;
+  }
+
+  /* VOLUME CONTROL ย้ายลงล่างมือถือ */
+  @media screen and (max-width: 600px){
+
+  .volume-container{
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    padding: 8px 14px;
+    opacity: 0.9;
+  }
+
+}
 }
