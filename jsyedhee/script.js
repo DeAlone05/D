@@ -7,7 +7,7 @@ const subId = '603384047321743370'; // ใส่ ID ของ pikminmi
 // `CODE_MANUAL_AVATAR_URL`. If that is non-empty it will take
 // precedence over any stored value in localStorage.
 // Example: const CODE_MANUAL_AVATAR_URL = 'https://example.com/myavatar.png';
-const CODE_MANUAL_AVATAR_URL = 'https://cdn.discordapp.com/attachments/1479572469714256166/1479579246199574788/sparxie-sparxie-sparkle.gif?ex=69ac8d0d&is=69ab3b8d&hm=42c85648fed0360fe867836b7516e0eaa1a69a5ae0128bc121333d956f38ee82&'; // <-- paste image URL here to hardcode it in code
+const CODE_MANUAL_AVATAR_URL = 'https://cdn.discordapp.com/attachments/1479572469714256166/1479741958757810176/reze-tongue-out-reze-chainsaw-man-moving-her-head.gif?ex=69ad2497&is=69abd317&hm=be2668986ff120b93876ee24acc6bcd04a3556db44ae87ab041b0c08607ba35d&'; // <-- paste image URL here to hardcode it in code
 // `manualAvatarUrl` uses the code URL first, then any saved localStorage value.
 let manualAvatarUrl = CODE_MANUAL_AVATAR_URL || localStorage.getItem('manualAvatarUrl') || '';
 const hideStatusIndicator = true; // set true to remove the small colored status dot
@@ -117,6 +117,16 @@ const playlist = [
     name: "EGO", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3",
     image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479574002254221364/tenor_3.gif?ex=69ac882b&is=69ab36ab&hm=7a1dc263eca076ec0f2542ce0fb6d6f979863fbc7a799996d7c18e2e19645bf4&"
+  },
+  { 
+    name: "Loop", 
+    url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Loop.mp3",
+    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479740966079430869/-sabart.gif?ex=69ad23aa&is=69abd22a&hm=5c0452d6d963067559e6a186584e019b0044ef9db64b7fd14972a7e5b438f896&"
+  },
+  { 
+    name: "Wanyai", 
+    url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
+    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479579003844165632/tenor_5.gif?ex=69ac8cd3&is=69ab3b53&hm=14513cc82b3b903a596cd47ade3453dc9ed928cae649729cc511e4d774e5b2b5&"
   }
 ];
 
