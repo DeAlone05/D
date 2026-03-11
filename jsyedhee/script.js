@@ -121,12 +121,12 @@ const playlist = [
   { 
     name: "Loop", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Loop.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479740966079430869/-sabart.gif?ex=69ad23aa&is=69abd22a&hm=5c0452d6d963067559e6a186584e019b0044ef9db64b7fd14972a7e5b438f896&"
+    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479740966079430869/-sabart.gif?ex=69b3126a&is=69b1c0ea&hm=c290fc7d7186dfea949b296ef5f124c185ffc72ef33bf94e5835854737ffcbfa&"
   },
   { 
     name: "Wanyai", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479579003844165632/tenor_5.gif?ex=69ac8cd3&is=69ab3b53&hm=14513cc82b3b903a596cd47ade3453dc9ed928cae649729cc511e4d774e5b2b5&"
+    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479579003844165632/tenor_5.gif?ex=69b27b93&is=69b12a13&hm=375cd7f16ce1f12ec8916f3d4c5210249f25dbf4e2c857e3ca3aa31873a3124f&"
   }
 ];
 
@@ -469,3 +469,4 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseleave", () => {
   card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
