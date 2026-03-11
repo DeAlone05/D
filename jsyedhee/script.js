@@ -7,7 +7,7 @@ const subId = '603384047321743370'; // ใส่ ID ของ pikminmi
 // `CODE_MANUAL_AVATAR_URL`. If that is non-empty it will take
 // precedence over any stored value in localStorage.
 // Example: const CODE_MANUAL_AVATAR_URL = 'https://example.com/myavatar.png';
-const CODE_MANUAL_AVATAR_URL = 'https://cdn.discordapp.com/attachments/1479572469714256166/1479741958757810176/reze-tongue-out-reze-chainsaw-man-moving-her-head.gif?ex=69ad2497&is=69abd317&hm=be2668986ff120b93876ee24acc6bcd04a3556db44ae87ab041b0c08607ba35d&'; // <-- paste image URL here to hardcode it in code
+const CODE_MANUAL_AVATAR_URL = 'https://raw.githubusercontent.com/Dogearth/mp3/main/1bc8afb07c8395f3f4fb46e4fb426cce.gif'; // <-- paste image URL here to hardcode it in code
 // `manualAvatarUrl` uses the code URL first, then any saved localStorage value.
 let manualAvatarUrl = CODE_MANUAL_AVATAR_URL || localStorage.getItem('manualAvatarUrl') || '';
 const hideStatusIndicator = true; // set true to remove the small colored status dot
@@ -106,27 +106,27 @@ const playlist = [
   { 
     name: "LIKE DAMN", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/LIKE%20DAMN.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479573522513793124/tenor_2.gif?ex=69ac87b8&is=69ab3638&hm=918f4435146d29c881e3874239aa57555dbd0d523042c423601232e5c5a23d47&" // ใส่ลิงก์รูปตรงนี้
+    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/c8df0b12bf6a51e8fc8796b86d4985ba.gif" // ใส่ลิงก์รูปตรงนี้
   },
   { 
     name: "Jigsaw Story", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Jigsaw%20Story.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479573546614259852/tenor_1.gif?ex=69ac87be&is=69ab363e&hm=64bfcfd2f2110600bbd371cc283bb7482f3ed8cd8bc8ea6ce83b6a3ffb64a59c&" 
+    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/kurumi-date-a-live.gif" 
   },
   { 
     name: "EGO", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479574002254221364/tenor_3.gif?ex=69ac882b&is=69ab36ab&hm=7a1dc263eca076ec0f2542ce0fb6d6f979863fbc7a799996d7c18e2e19645bf4&"
+    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/57ac36a4de5d2cfa3ac4fa51b2aa3f2f.gif"
   },
   { 
     name: "Loop", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Loop.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479740966079430869/-sabart.gif?ex=69b3126a&is=69b1c0ea&hm=c290fc7d7186dfea949b296ef5f124c185ffc72ef33bf94e5835854737ffcbfa&"
+    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/3dc9ab1b3cca24236a1fab2522bc0661.gif"
   },
   { 
     name: "Wanyai", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
-    image: "https://cdn.discordapp.com/attachments/1479572469714256166/1479579003844165632/tenor_5.gif?ex=69b27b93&is=69b12a13&hm=375cd7f16ce1f12ec8916f3d4c5210249f25dbf4e2c857e3ca3aa31873a3124f&"
+    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/13f8a29bffe2f40550a3ee8863f6ef1a.gif"
   }
 ];
 
@@ -469,4 +469,5 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseleave", () => {
   card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
 
