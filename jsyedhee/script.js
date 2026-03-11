@@ -7,7 +7,7 @@ const subId = '603384047321743370'; // ใส่ ID ของ pikminmi
 // `CODE_MANUAL_AVATAR_URL`. If that is non-empty it will take
 // precedence over any stored value in localStorage.
 // Example: const CODE_MANUAL_AVATAR_URL = 'https://example.com/myavatar.png';
-const CODE_MANUAL_AVATAR_URL = 'https://raw.githubusercontent.com/DeAlone05/mp3/main/d1.gif'; // <-- paste image URL here to hardcode it in code
+const CODE_MANUAL_AVATAR_URL = 'https://raw.githubusercontent.com/DeAlone05/mp3/main/d7.gif'; // <-- paste image URL here to hardcode it in code
 // `manualAvatarUrl` uses the code URL first, then any saved localStorage value.
 let manualAvatarUrl = CODE_MANUAL_AVATAR_URL || localStorage.getItem('manualAvatarUrl') || '';
 const hideStatusIndicator = true; // set true to remove the small colored status dot
@@ -469,6 +469,7 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseleave", () => {
   card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
 
 
 
