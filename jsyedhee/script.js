@@ -7,7 +7,7 @@ const subId = '603384047321743370'; // ใส่ ID ของ pikminmi
 // `CODE_MANUAL_AVATAR_URL`. If that is non-empty it will take
 // precedence over any stored value in localStorage.
 // Example: const CODE_MANUAL_AVATAR_URL = 'https://example.com/myavatar.png';
-const CODE_MANUAL_AVATAR_URL = 'https://raw.githubusercontent.com/Dogearth/mp3/main/1bc8afb07c8395f3f4fb46e4fb426cce.gif'; // <-- paste image URL here to hardcode it in code
+const CODE_MANUAL_AVATAR_URL = 'https://raw.githubusercontent.com/DeAlone05/mp3/main/d1.gif'; // <-- paste image URL here to hardcode it in code
 // `manualAvatarUrl` uses the code URL first, then any saved localStorage value.
 let manualAvatarUrl = CODE_MANUAL_AVATAR_URL || localStorage.getItem('manualAvatarUrl') || '';
 const hideStatusIndicator = true; // set true to remove the small colored status dot
@@ -106,27 +106,27 @@ const playlist = [
   { 
     name: "LIKE DAMN", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/LIKE%20DAMN.mp3",
-    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/c8df0b12bf6a51e8fc8796b86d4985ba.gif" // ใส่ลิงก์รูปตรงนี้
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d2.gif" // ใส่ลิงก์รูปตรงนี้
   },
   { 
     name: "Jigsaw Story", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Jigsaw%20Story.mp3",
-    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/kurumi-date-a-live.gif" 
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d3.gif" 
   },
   { 
     name: "EGO", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/EGO.mp3",
-    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/57ac36a4de5d2cfa3ac4fa51b2aa3f2f.gif"
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d4.gif"
   },
   { 
     name: "Loop", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Loop.mp3",
-    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/3dc9ab1b3cca24236a1fab2522bc0661.gif"
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d5.gif"
   },
   { 
     name: "Wanyai", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
-    image: "https://raw.githubusercontent.com/Dogearth/mp3/main/13f8a29bffe2f40550a3ee8863f6ef1a.gif"
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d6.gif"
   }
 ];
 
@@ -469,5 +469,6 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseleave", () => {
   card.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
 
 
