@@ -103,6 +103,11 @@ function debugTestImages() {
 
 
 const playlist = [
+    { 
+    name: "StarFall", 
+    url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
+    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d6.gif"
+  },
   { 
     name: "LIKE DAMN", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/LIKE%20DAMN.mp3",
@@ -122,12 +127,8 @@ const playlist = [
     name: "Loop", 
     url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Loop.mp3",
     image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d5.gif"
-  },
-  { 
-    name: "Wanyai", 
-    url: "https://raw.githubusercontent.com/Dogearth/mp3/main/WANYAi.mp3",
-    image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d6.gif"
   }
+
 ];
 
 let currentIndex = 0;
