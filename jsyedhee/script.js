@@ -105,7 +105,7 @@ function debugTestImages() {
 const playlist = [
    { 
     name: "Confessing", 
-    url: "https://raw.githubusercontent.com/Dogearth/mp3/main/Confessing.mp3",
+    url: "https://raw.githubusercontent.com/DeAlone05/mp3/main/Confessing.mp3",
     image: "https://raw.githubusercontent.com/DeAlone05/mp3/main/d8.gif"
   },
     { 
